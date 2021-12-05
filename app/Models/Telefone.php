@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Telefone extends Model
 {
-    use HasFactory;
+    public function proprietario(){
+        return $this->belongsTo('App\Models\Aluno', 'aluno_id', 'id');
+    }
 }
