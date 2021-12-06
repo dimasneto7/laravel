@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aluno extends Model
 {
-    public function disciplinas(){
-        return $this->belongsToMany('App\Models\Disciplina');
-    }
+  public function disciplinas(){
+      return $this->belongsToMany('App\Models\Disciplina');
+  }
 }
