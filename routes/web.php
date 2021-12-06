@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Main@home');
+Route::get('/', 'Main@index');
 Route::get('/endereco_teste', 'Main@teste')->name('minha_route');
 
 // Route::get('/', function () {

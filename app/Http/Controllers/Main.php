@@ -2,29 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Aluno;
-use App\Models\Disciplina;
+use Illuminate\Htto\Request;
+use Illuminate\Support\Facades\DB;
 
 class Main extends Controller
 {
-    public function home()
+    public function index()
     {
-        $id = 2;
+       // MIGRATIONS
 
-        $aluno = Aluno::with('disciplinas')->find($id);
-
-        echo '<h3>'.$aluno->nome.'</h3>';
-        foreach($aluno->disciplinas as $disciplina){
-            echo $disciplina->disciplina.'<br>';
-        }
-
-        echo '<hr>';
-
-        $disciplina = Disciplina::with('alunos')->find(1);
-        echo '<h3>'.$disciplina->disciplina.'</h3>';
-        foreach($disciplina->alunos as $aluno){
-            echo $aluno->nome.'<br>';
-        }
-
+       $res = DB::select("SELECT * FROM teste");
+       echo "ok";
     }
 }
