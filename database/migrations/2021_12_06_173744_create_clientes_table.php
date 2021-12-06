@@ -15,10 +15,12 @@ class CreateClientesTable extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('email');
-            $table->string('telefone');
-            $table->timestamps();
+            $table->string('nome', 50);
+            $table->string('email', 50);
+            $table->string('telefone', 20);
+            $table->dateTime('created_at', 0)->nullable();
+            $table->dateTime('updated_at', 0)->nullable();
+            $table->dateTime('deleted_at', 0)->nullable();
         });
     }
 
